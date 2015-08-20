@@ -3,6 +3,16 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+var path = require('path');
+app.use(loopback.static(path.resolve(__dirname, '../client')));
+
+var buildBrowserBundle = require('../client/build');
+buildBrowserBundle(function(err) {
+  if (err) {
+    throw err;
+  }
+});
+
 app.start = function() {
   // start the web server
   return app.listen(function() {
