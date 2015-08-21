@@ -1,0 +1,10 @@
+{
+  "local": {
+    "connector": "memory",
+    "localStorage": "kurento-room-node"
+  },
+  "remote": {
+    "connector": "remote",
+    "url": "http://localhost:3000/api"
+  }
+}

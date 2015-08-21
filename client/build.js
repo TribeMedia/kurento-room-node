@@ -21,6 +21,15 @@ module.exports = function buildBrowserBundle(callback) {
   //bundler.require('./jsx/App.jsx', { expose: 'App'});
   //var stream = bundler.bundle();
 
+  bundler.require(path.resolve(__dirname, 'client/loopback/index.js'),
+    {expose: 'lbclient'});
+  try {
+    boot.compileToBrowserify({appRootDir: path.resolve(__dirname,
+      'client/loopback')}, bundler);
+  } catch(e) {
+    throw e;
+  }
+
   /*try {
     boot.compileToBrowserify({
       appRootDir: __dirname,
