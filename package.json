@@ -18,6 +18,8 @@
     "react": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",
     "reactify": "^1.1.1",
+    "kurento-client": "Kurento/kurento-client-js",
+    "kurento-utils": "Kurento/kurento-utils-js",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
