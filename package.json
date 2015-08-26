@@ -11,6 +11,9 @@
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "errorhandler": "^1.1.1",
+    "express-hbs": "^0.8.4",
+    "kurento-client": "Kurento/kurento-client-js",
+    "kurento-utils": "Kurento/kurento-utils-js",
     "loopback": "^2.14.0",
     "loopback-boot": "^2.6.5",
     "loopback-datasource-juggler": "^2.19.0",
@@ -18,8 +21,6 @@
     "react": "^0.13.3",
     "react-tap-event-plugin": "^0.1.7",
     "reactify": "^1.1.1",
-    "kurento-client": "Kurento/kurento-client-js",
-    "kurento-utils": "Kurento/kurento-utils-js",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
