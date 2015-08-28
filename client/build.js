@@ -6,6 +6,7 @@ var pkg = require('./package.json');
 var fs = require('fs');
 var browserify = require('browserify');
 var reactify = require('reactify');
+var babelify = require('babelify');
 var boot = require('loopback-boot');
 
 module.exports = function buildBrowserBundle(callback) {
@@ -15,7 +16,10 @@ module.exports = function buildBrowserBundle(callback) {
   //b.transform(reactify);
   //b.require('./' + pkg.main, { expose: 'app' });
 
-  var bundler = browserify({ basedir: __dirname, entries: ['app.js'], transform: [ reactify ], debug: true, cache: {} });
+  es6ify.traceurOverrides = {experimental: true};
+
+  var bundler = browserify({ basedir: __dirname, entries: ['app.js'], transform: [ babelify, reactify ], extensions: ['.js', '.jsx'],
+    grep: /\.jsx?$/, debug: true, cache: {} });
 
   //bundler.transform(reactify);
   //bundler.require('./jsx/App.jsx', { expose: 'App'});
