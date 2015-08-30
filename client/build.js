@@ -16,9 +16,7 @@ module.exports = function buildBrowserBundle(callback) {
   //b.transform(reactify);
   //b.require('./' + pkg.main, { expose: 'app' });
 
-  es6ify.traceurOverrides = {experimental: true};
-
-  var bundler = browserify({ basedir: __dirname, entries: ['app.js'], transform: [ babelify, reactify ], extensions: ['.js', '.jsx'],
+  var bundler = browserify({ basedir: __dirname, entries: ['index.js'], transform: [ babelify, reactify ], extensions: ['.js', '.jsx'],
     grep: /\.jsx?$/, debug: true, cache: {} });
 
   //bundler.transform(reactify);
